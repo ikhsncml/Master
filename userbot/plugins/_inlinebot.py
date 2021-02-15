@@ -47,7 +47,7 @@ def button(page, modules):
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"{hell_emoji} " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(f"{hell_emoji} " + pair, data=f"Information[{page}]({pair}) {hell_emoji}")
                 for pair in pairs
             ]
         )
@@ -95,7 +95,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "@HellBot_Official",
-                text="""**Hallo! Ini Adalah Repo [Master Userbot](https://t.me/Lorduserbot_Group)\nRepo Yang Dibuat Oleh [Alvin](https://t.me/LiuAlvinas) Dari Beberapa Repo Userbot Github, Untuk Informasi Repo Bisa Tekan Tombol Dibawah.**""",
+                text="""**Hallo Kamu! Ini Adalah Repo [Master Userbot](https://t.me/Lorduserbot_Group)\nRepo Yang Dibuat Oleh [Alvin](https://t.me/LiuAlvinas) Dari Beberapa Repo Userbot Github, Untuk Informasi Repo Bisa Tekan Tombol Dibawah.**""",
                 buttons=[
                     [
                         custom.Button.url("Owner Repo", "https://t.me/liualvinas"),
@@ -158,19 +158,19 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         try:
             buttons = [
                 custom.Button.inline(
-                    "⚡ " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
+                    "💎 " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]}) 💎"
                 )
                 for cmd in CMD_HELP_BOT[commands]["commands"].items()
             ]
         except KeyError:
             return await event.answer(
-                "No Description is written for this plugin", cache_time=0, alert=True
+                "Tidak ada Deskripsi yang ditulis untuk plugin ini", cache_time=0, alert=True
             )
 
         buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
-        buttons.append([custom.Button.inline("◀️ ᏰᎯᏣᏦ", data=f"page({page})")])
+        buttons.append([custom.Button.inline("☚ Kembali", data=f"page({page})")])
         await event.edit(
-            f"**📗 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
+            f"**♛ Plugin Master:** `{commands}`\n**🔱 Jumlah Perintah:** `{len(CMD_HELP_BOT[commands]['commands'])}`",
             buttons=buttons,
             link_preview=False,
         )
@@ -181,7 +181,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © Hêllẞø† ™",
+                "Selsai? Master Menutup. © **Master Userbot**",
                 cache_time=0,
                 alert=True,
             )
@@ -190,35 +190,35 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         page = int(event.data_match.group(2).decode("UTF-8"))
         commands = event.data_match.group(3).decode("UTF-8")
 
-        result = f"**📗 File:** `{cmd}`\n"
+        result = f"**♛ Plugin Master:** `{cmd}`\n"
         if CMD_HELP_BOT[cmd]["info"]["info"] == "":
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+                result += f"**⚠️ Peringatan:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
             else:
                 result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
         else:
             result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
             if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+                result += f"**⚠️ Peringatan:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
             result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
         command = CMD_HELP_BOT[cmd]["commands"][commands]
         if command["params"] is None:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
+            result += f"**♛ Perintah:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
         else:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+            result += f"**♛ Perintah:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
 
         if command["example"] is None:
-            result += f"**💬 Explanation:** `{command['usage']}`\n\n"
+            result += f"**💬 Penjelasan:** `{command['usage']}`\n\n"
         else:
-            result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += f"**⌨️ For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+            result += f"**💬 Penjelasan:** `{command['usage']}`\n"
+            result += f"**⌨️ Contoh:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
 
         await event.edit(
             result,
             buttons=[
-                custom.Button.inline("◀️ ᏰᎯᏣᏦ", data=f"Information[{page}]({cmd})")
+                custom.Button.inline("☚ Kembali", data=f"Information[{page}]({cmd})")
             ],
             link_preview=False,
         )
