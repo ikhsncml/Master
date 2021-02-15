@@ -10,12 +10,13 @@ Master Userbot, Repo Yang Dibuat Karna Gabut, Dari Beberapa Repo Userbot Github,
 
 ### CREDIT
 
-<details>
-  <summary> Credits 🏅 </summary>
+Terimakasih
 
 • [JaaduBot](https://github.com/Amberyt/JaaduBot)
 
 • [Uniborg](https://github.com/spechide/uniborg)
+
+• [HellBot](https://github.com/HellBoy-Op/Hellbot)
 
 
 ### INFO
