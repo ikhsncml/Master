@@ -101,10 +101,10 @@ if ENV:
         # number of colums of buttons to be displayed in .help command
         NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 3))
         # emoji to be displayed  in help .help
-        EMOJI_IN_HELP = os.environ.get("EMOJI_IN_HELP", "🔸")
+        EMOJI_IN_HELP = os.environ.get("EMOJI_IN_HELP", "⌖")
         # specify command handler that should be used for the plugins
         # this should be a valid "regex" pattern
-        COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
+        COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r".\")
         # specify list of users allowed to use bot
         # WARNING: be careful who you grant access to your bot.
         # malicious users could do ".exec rm -rf /*"
@@ -143,7 +143,7 @@ if ENV:
         LYDIA_API = os.environ.get("LYDIA_API",None)
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
         UPSTREAM_REPO = os.environ.get(
-            "UPSTREAM_REPO", "https://github.com/HellBoy-OP/HellBot"
+            "UPSTREAM_REPO", "https://github.com/Zora24/Master"
         )
         EXTRA_HELLBOT = os.environ.get("EXTRA_HELLBOT", -1001221881562)
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
