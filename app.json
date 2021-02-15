@@ -14,11 +14,11 @@
   "success_url": "https://t.me/LiuAlvinas",
   "env": {
     "ENV": {
-      "description": "Setting this to ANYTHING will enable heroku.",
+      "description": "Setel ANYTHING untuk mengaktifkan Heroku (Mohon Jangan Mengubahnya).",
       "value": "ANYTHING"
     },
     "TEMP_DOWNLOAD_DIRECTORY": {
-      "description": "Where downloaded files will go.",
+      "description": "Dimana File Download Akan Pergi.",
       "value": "./userbot/DOWNLOADS/",
       "required": false
     },
@@ -58,11 +58,11 @@
       "required": true
     },
     "APP_ID": {
-      "description": "Dapatkan APP_ID dari my.telegram.org!",
+      "description": "Dapatkan APP_ID di my.telegram.org!",
       "value": ""
     },
     "REM_BG_API_KEY": {
-      "description": "Dapatkan api key mu dari https://www.remove.bg/ untuk cmd remove background",
+      "description": "Dapatkan api key mu di https://www.remove.bg/ untuk cmd remove background",
       "value": "",
       "required": false
     },
@@ -72,12 +72,12 @@
       "required": false
     },
     "LYDIA_API_KEY": {
-      "description": "Needed for Lydia AI. Follow https://telegra.ph/Lydia-09-05 to get your API.",
+      "description": "Dibutuhkan Untuk Lydia AI. Ikuti https://telegra.ph/Lydia-09-05 dapatkan API mu (Dalam Bahasa Inggris).",
       "value": "",
       "required": false
     },
     "API_HASH": {
-      "description": "Dapatkan API_HASH dari my.telegram.org!",
+      "description": "Dapatkan API_HASH di my.telegram.org!",
       "value": ""
     },
     "PLUGIN_CHANNEL": {
@@ -85,51 +85,51 @@
       "value": ""
     },
     "PRIVATE_GROUP_BOT_API_ID": {
-      "description": "Buatlah sebuah channel channel lalu tambahkan rose ketik .get_id ,isilah disini untuk menvalue here for save messages",
+      "description": "Buatlah sebuah channel channel lalu ambil id channelnya, lalu isi dibawah.",
       "value": ""
     },
     "PRIVATE_GROUP_ID": {
-      "description": "Create a private group add rose bot then type /id. PLUGIN_CHANNEL and PRIVATE_GROUP_ID both values should be same",
+      "description": "Buatlah grup privasi tambahkan rose bot lalu ketik /id. PLUGIN_CHANNEL dan PRIVATE_GROUP_ID harus di isi sama",
       "value": ""
     },
     "PM_LOGGR_BOT_API_ID": {
-       "description": "forlogin private messages create a private channel and do .get_id and add that id", 
+       "description": "Untuk memasukkan log pm buatlah sebuah channel privasi dapatkan id nya, lalu isi dibawah id channel mu.", 
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Dapatkan ini dari @Lorduserbot_group lalu masuk, ketik #string",
+      "description": "Dapatkan ini dari @Lorduserbot_group masuk, lalu ketik #string",
       "value": ""
     },
     "HEROKU_API_KEY": {
-      "description": "Pergi ke https://dashboard.heroku.com/account, scroll kebawah dan tekan Reveal API.",
+      "description": "Pergi ke https://dashboard.heroku.com/account, scroll kebawah lalu tekan Reveal API.",
       "value": "",
       "required": true
     },
     "HEROKU_APP_NAME": {
-      "description": "The Value of App Name you filled in right on top.Required for updater to work.",
+      "description": "Heroku App Name Mu Harus Sama Dengan App Name, Jika Tidak Akan Terjadi Crash (App Name Liat Ke Vars Paling Atas).",
       "value": "",
       "required": true
     },
     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at [BotFather](http://telegram.dog/BotFather) and get the token of your bot. And Don't Forget To Turn on inline Mode on bot settings. Get it.",
+      "description": "Dibutuh untuk membuat tombol inline bot. Buatlah bot di [BotFather](http://telegram.dog/BotFather) dan dapatkan token api bot. Dan jangan lupa untuk Turn on inline Mode di bot settings.",
       "value": ""
     },
     "CHROME_BIN": {
-      "description": "For Carbon.py. Leave as it is. ",
+      "description": "Untuk Carbon.py (Jangan Diubah). ",
       "value": "/app/.apt/usr/bin/google-chrome",
       "required": false
     },
     "CHROME_DRIVER": {
-      "description": "For Carbon.py. Leave as it is. ",
+      "description": "Untuk Carbon.py (Jangan Diubah). ",
       "value": "/app/.chromedriver/bin/chromedriver",
       "required": false
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at @BotFather and get the username of your bot",
+      "description": "Dibutuhkan untuk membuat tombol inline. Buatlah bot di @BotFather dan dapatkan username dari bot mu",
       "value": ""
     },
     "OPEN_WEATHER_MAP_APPID": {
-      "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
+      "description": "Dapatkan APPID milik mu dari https://api.openweathermap.org/data/2.5/weather",
       "required": false
     },
     "TZ": {
@@ -138,7 +138,7 @@
       "required": false
     },
     "PM_DATA": {
-      "description": "ketik DISABLE jika anda mau to nonaktifkan pm permit... ",
+      "description": "ketik DISABLE jika anda mau Menonaktifkan PM permit... ",
       "value": "ENABLE",
       "required": false 
     }
