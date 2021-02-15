@@ -23,19 +23,20 @@ PM_IMG = "https://telegra.ph/file/2d4bff46a2fcc62e67fda.jpg"
 pm_caption = "__**♛ Master Userbot ♛**__\n\n"
 
 
-pm_caption += f"**❃ Master**\n   ➥ [{DEFAULTUSER}](tg://user?id={kraken})\n"
+pm_caption += (
+    f"**❃ My Master**\n  ➥ [{DEFAULTUSER}](tg://user?id={kraken})\n"
+)
+pm_caption += f"**❃ Bot**\n  ➥ `Versi {hellversion}`\n"
 
-pm_caption += f"**❃ Bot**\n   ➥ `Versi {hellversion}`\n"
-
-pm_caption += f"**❃ Telethon\n   ➥ `Versi {version.__version__}`\n"
+pm_caption += f"**❃ Telethon**\n   ➥ `Versi {version.__version__}`\n"
 
 pm_caption += f"**❃ Status Sudo**\n   ➥ `{sudou}`\n"
 
 pm_caption += "**❃ Grup Userbot**\n   ➥ [Grup Userbot](https://t.me/LordUserbot_Group)\n"
 
-pm_caption += "**❃ Owner Repo**\n   ➥ [Alvin](https://t.me/liualvinas)\n\n"
+pm_caption += "**❃ Owner Repo**\n   ➥ [Alvin](https://t.me/liualvinas)\n"
 
-pm_caption += "**❃ Repo**\n   ➥ [Repo Master](https://github.com/Zora24/Master)"
+pm_caption += "**❃ Repo**\n  ➥ [Repo Master](https://github.com/Zora24/Master)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
