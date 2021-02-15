@@ -10,8 +10,8 @@ from userbot import *
 from userbot import bot as hellbot
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
-hell_logo = "./KRAKEN/hellbot_logo.jpg"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Master"
+hell_logo = "./MasterUserbot/masterlogo.jpg"
 kraken = hellbot.uid
 hell = f"[{DEFAULTUSER}](tg://user?id={kraken})"
 
@@ -23,7 +23,7 @@ async def send(event):
     message_id = event.message.id
     thumb = hell_logo
     input_str = event.pattern_match.group(1)
-    omk = f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded by ≈** {hell}\n\n⚡ **[ʟɛɢɛռɖaʀʏ ᴀғ ɦɛʟʟɮօt](t.me/hellbot_official)** ⚡"
+    omk = f"**⍟ Nama Plugin ≈** `{input_str}`\n**⍟ Diunggah Oleh ≈** {hell}\n\n🔱 **[Master](t.me/LordUserbot_Group)** 🔱"
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
         lauda = await event.client.send_file(
@@ -37,7 +37,7 @@ async def send(event):
         )
         await event.delete()
     else:
-        await edit_or_reply(event, "File not found..... Kek")
+        await edit_or_reply(event, "`File Tidak Ditemukan`")
 
 @hellbot.on(admin_cmd(pattern="install$", outgoing=True))
 @hellbot.on(sudo_cmd(pattern="install$", allow_sudo=True))
@@ -71,13 +71,13 @@ async def install(event):
                             a = "__Installing...__"
                             b = 1
                         await event.edit(a)
-                    return await event.edit(f"✅ **Installed module** :- `{shortname}` \n✨ BY :- {hell}\n\n{string}\n\n        ⚡ **[ʟɛɢɛռɖaʀʏ ᴀғ ɦɛʟʟɮօt](t.me/hellbot_official)** ⚡", link_preview=False)
+                    return await event.edit(f"✅ **Modul Yang Terpasang** :- `{shortname}` \n➥ **Dari:**- {hell}\n\n{string}\n\n        🔱 **[Master](t.me/Lorduserbot_Group)** 🔱", link_preview=False)
                 return await event.edit(f"Installed module `{os.path.basename(downloaded_file_name)}`")
             else:
                 os.remove(downloaded_file_name)
-                return await event.edit(f"**Failed to Install** \n`Error`\nModule already installed or unknown format")
+                return await event.edit(f"**Gagal Memasang** \n`Kesalahan`\nModules Sudah Dipasang Atau Format Tidak Diketahui")
         except Exception as e: 
-            await event.edit(f"**Failed to Install** \n`Error`\n{str(e)}")
+            await event.edit(f"**Gagal Memasang** \n`Kesalahan`\n{str(e)}")
             return os.remove(downloaded_file_name)
     
 @hellbot.on(admin_cmd(pattern=r"uninstall (?P<shortname>\w+)", outgoing=True))
@@ -90,9 +90,9 @@ async def uninstall(kraken):
     try:
         remove_plugin(shortname)
         os.remove(dir_path)
-        await kraken.edit(f"Uninstalled `{shortname}` successfully")
+        await kraken.edit(f"Uninstall `{shortname}` Berhasil Dilakukan")
     except OSError as e:
-        await kraken.edit("Error: %s : %s" % (dir_path, e.strerror))
+        await kraken.edit("Kesalahan: %s : %s" % (dir_path, e.strerror))
 
 @hellbot.on(admin_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 @hellbot.on(sudo_cmd(pattern=r"upload (?P<shortname>\w+)$", allow_sudo=True))
@@ -102,10 +102,10 @@ async def unload(event):
     shortname = event.pattern_match["shortname"]
     try:
         remove_plugin(shortname)
-        await event.edit(f"Successfully unloaded `{shortname}`")
+        await event.edit(f"Berhasil Unloaded `{shortname}`")
     except Exception as e:
         await event.edit(
-            "Successfully unloaded {shortname}\n{}".format(
+            "Berhasil Unloaded `{shortname}`\n{}".format(
                 shortname, str(e)
             )
         )
@@ -123,22 +123,22 @@ async def load(event):
         except BaseException:
             pass
         load_module(shortname)
-        await event.edit(f"Successfully loaded `{shortname}`")
+        await event.edit(f"Berhasil Loaded `{shortname}`")
     except Exception as e:
         await event.edit(
-            f"Sorry, could not load {shortname} because of the following error.\n{str(e)}"
+            f"Maaf, Tidak Bisa Memuat {shortname} Karna Kesalahan Berikut.\n{str(e)}"
         )
 
 CmdHelp("core").add_command(
-  "install", "<reply to a .py file>", "Installs the replied python file if suitable to userbot codes. (TEMPORARILY DISABLED AS HACKERS MAKE YOU INSTALL SOME PLUGINS AND GET YOUR DATA)"
+  "install", "<balas ke .py file>", "Instal file python yang dibalas jika sesuai dengan kode userbot. (SEMENTARA DINONAKTIFKAN SEBAGAI HACKER MEMBUAT ANDA INSTAL BEBERAPA PLUGIN DAN DAPATKAN DATA ANDA)"
 ).add_command(
-  "uninstall", "<plugin name>", "Uninstalls the given plugin from userbot. To get that again do .restart", "uninstall alive"
+  "uninstall", "<nama plugin>", "Uninstal plugin yang diberikan dari userbot. Untuk mendapatkannya lagi, lakukan .restart", "uninstall alive"
 ).add_command(
-  "load", "<plugin name>", "Loades the unloaded plugin to your userbot", "load alive"
+  "load", "<nama plugin>", "Memuat plugin yang telah dibongkar ke userbot Anda", "load alive"
 ).add_command(
-  "unload", "<plugin name>", "Unloads the plugin from your userbot", "unload alive"
+  "unload", "<nama plugin>", "Unload plugin dari userbot anda", "unload alive"
 ).add_command(
-  "send", "<file name>", "Sends the given file from your userbot server, if any.", "send alive"
+  "send", "<nama file>", "Mengirim file yang diberikan dari server userbot Anda, jika ada.", "send alive"
 ).add_command(
-  "cmds", None, "Gives out the list of modules in HellBot."
+  "cmds", None, "Memberikan daftar modul di Master."
 ).add()
