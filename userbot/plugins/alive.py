@@ -35,7 +35,7 @@ pm_caption += "**❃ Grup Userbot**\n   ➥ [Grup Userbot](https://t.me/LordUser
 
 pm_caption += "**❃ Owner Repo**\n   ➥ [Alvin](https://t.me/liualvinas)\n\n"
 
-pm_caption += "**❃ Repo**\n   ➥ [Repo Master](https://github.com/hellboy-op/hellbot)"
+pm_caption += "**❃ Repo**\n   ➥ [Repo Master](https://github.com/Zora24/Master)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
