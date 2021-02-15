@@ -32,7 +32,7 @@ requirements_path = path.join(
 
 
 async def gen_chlog(repo, diff):
-    ch_log = "**ChangeLog** \n\n"
+    ch_log = "**PERUBAHAN** \n\n"
     for c in repo.iter_commits(diff):
         ch_log += f"🛠️ **#{c.count()} :** [{c.summary}]({UPSTREAM_REPO_URL}/commit/{c}) 🚶 __{c.author}__\n"
     return ch_log
@@ -77,8 +77,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         heroku_applications = heroku.apps()
         if HEROKU_APP_NAME is None:
             await event.edit(
-                "**Please set up the** `HEROKU_APP_NAME` **variable"
-                " to be able to deploy your Hêllẞøt.**"
+                "**Mohon Setel Vars** `HEROKU_APP_NAME` **"
+                " Untuk Bisa Melakukan Deploy Ke Master Userbot Mu.**"
             )
             repo.__del__()
             return
@@ -89,7 +89,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if heroku_app is None:
             await event.edit(
                 f"{txt}\n"
-                "**Invalid Heroku credentials for updating Hêllẞøt.**"
+                "**Heroku Tidak Valid Untuk Memperbarui Master.**"
             )
             return repo.__del__()
         ups_rem.fetch(ac_br)
@@ -114,7 +114,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+                "__Memperbarui__ **Master** Dilakukan\n__Master Mohon Menunggu Selama 5 Menit, Pembaruan Dalam Proses__"
             )
     else:
         await event.edit("**Please set up** `HEROKU_API_KEY` **variable.**")
@@ -128,7 +128,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+        "__Memperbarui__ **Master** Dilakukan\n__Master Mohon Menunggu Selama 5 Menit, Pembaruan Dalam Proses__"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -139,7 +139,7 @@ async def update(event, repo, ups_rem, ac_br):
 @borg.on(admin_cmd(pattern=r"update( now| deploy|$)"))
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
-    await event.edit("`Checking for updates, please wait...`")
+    await event.edit("`Mengecek Pembaruan Master, Mohon Menunggu...`")
     conf = event.pattern_match.group(1).strip()
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -188,14 +188,14 @@ async def upstream(event):
     """ - Special case for deploy - """
     if conf == "deploy":
         await event.edit(
-            "Updated your Hêllẞø† successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏\n\n**NOTE :** This is a powerful update process."
+            "__Memperbarui__ **Master** Dilakukan\n__Master Mohon Menunggu Selama 5 Menit, Pembaruan Dalam Proses__."
         )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
 
     if changelog == "" and not force_update:
         await event.edit(
-            f"**Your userbot is up-to-date with `{UPSTREAM_REPO_BRANCH}`!**"
+            f"**Master Userbot Sudah Paling Terbaru**"
         )
         return repo.__del__()
 
@@ -203,7 +203,7 @@ async def upstream(event):
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
         return await event.respond(
-            "**Do** `.update now` **or** `.update deploy` **to update.**"
+            "**Ketik** `.update now` **Atau** `.update deploy` **Untuk Melakukan Pembaruan Master.**"
         )
 
     if force_update:
