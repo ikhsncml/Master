@@ -55,13 +55,13 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏰᎯᏣᏦ {hell_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+               f"☜ Kiri {hell_emoji}", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{hell_emoji} ❌ {hell_emoji}•", data="close"
+               f"•{hell_emoji} Tutup {hell_emoji}•", data="close"
             ),
             custom.Button.inline(
-               f"{hell_emoji} ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+               f"{hell_emoji} Kanan ☞", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
@@ -75,12 +75,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query == "@HellBot_Official":
+        if event.query.user_id == bot.uid and query == "@Lorduserbot_Group":
             rev_text = query[::-1]
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
-                f"Hey! Only use .help please",
-                text=f"**Running HellBot**\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                f"Hai! Gunakan Saja .help",
+                text=f"**❃ Master Userbot**\n\n**✼ Jumlah Plugin:**`{len(CMD_HELP)}`\n**❉ Halaman:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -88,27 +88,27 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             part = query.split(" ")
             result = builder.article(
                 "File uploaded",
-                text=f"**File uploaded successfully to {part[2]} site.\n\nUpload Time : {part[1][:3]} second\n[‏‏‎ ‎]({part[0]})",
+                text=f"**Berhasil Mengunggah File Ke {part[2]} Site.\n\nWaktu Unggah: {part[1][:3]} Detik\n[‏‏‎ ‎]({part[0]})",
                 buttons=[[custom.Button.url("URL", part[0])]],
                 link_preview=True,
             )
         else:
             result = builder.article(
                 "@HellBot_Official",
-                text="""**Hey! This is [Hêllẞø†.](https://t.me/HellBot_Official) \nYou can know more about me from the links given below 👇**""",
+                text="""**Hallo! Ini Adalah Repo [Master Userbot](https://t.me/Lorduserbot_Group)\nRepo Yang Dibuat Oleh [Alvin](https://t.me/LiuAlvinas) Dari Beberapa Repo Userbot Github, Untuk Informasi Repo Bisa Tekan Tombol Dibawah.**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/HellBot_Official"),
+                        custom.Button.url("Owner Repo", "https://t.me/liualvinas"),
                         custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/HellBot_Official_Chat"
+                            "Grup Userbot", "https://t.me/Lorduserbot_Group"
                         ),
                     ],
                     [
                         custom.Button.url(
-                            "✨ REPO ✨", "https://github.com/HellBoy-OP/HellBot"),
+                            "Repo", "https://github.com/Zora24/Master"),
                         custom.Button.url
                     (
-                            "🔰 TUTORIAL 🔰", "https://youtu.be/M2FQJq_sHp4"
+                            "Deploy Master", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FZora24%2FMaster&template=https%3A%2F%2Fgithub.com%2FZora24%2FMaster"
                     )
                     ],
                 ],
@@ -120,14 +120,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © Hêllẞø† ™",
+                "**Semoga Harimu Menyenangkan**\n__Dari: Alvin__",
                 cache_time=0,
                 alert=True,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**Legenday AF** [Hêllẞøt](https://t.me/HellBot_Official) __Working...__\n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**Repo** [Master Userbot](https://t.me/Lorduserbot_Group)\n\n**Jumlah Modules:** `{len(CMD_HELP)}`\n**Halaman:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
@@ -136,19 +136,19 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await delete_hell(event,
-              "⚜️Hêllẞø† Menu Provider Is now Closed⚜️\n\n         **[© Hêllẞø† ™](t.me/hellbot_official)**", 5, link_preview=False
+              "**✘ Master Menutup Menu ✘**\n\n         **[MASTER USERBOT](https://github.com/Zora24/Master)**", 5, link_preview=False
             )
         else:
-            hell_alert = "Ho gya aapka? Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © Héllẞø† ™"
+            hell_alert = "Selsai? Master Menutup. © **Master Userbot**"
             await event.answer(hell_alert, cache_time=0, alert=True)
           
     @tgbot.on(
-        callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
+        callbackquery.CallbackQuery(data=compile(b"Informasi\[(\d*)\]\((.*)\)"))
     )
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © Hêllẞø† ™",
+                "Selsai? Master Menutup. © **Master Userbot**",
                 cache_time=0,
                 alert=True,
             )
