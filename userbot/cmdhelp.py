@@ -58,7 +58,7 @@ class CmdHelp:
         Brings results.
         """
 
-        result = f"**♛ Modul Master:** `{self.FILE}`\n"
+        result = f"**♛ Plugin Master:** `{self.FILE}`\n"
         if self.WARNING == "" and self.INFO == "":
             result += f"**⬇️ Official:** {'✅' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
@@ -66,10 +66,10 @@ class CmdHelp:
 
             if self.INFO == "":
                 if not self.WARNING == "":
-                    result += f"**⚠️ Peringatan :** {self.WARNING}\n\n"
+                    result += f"**⚠️ Peringatan:** {self.WARNING}\n\n"
             else:
                 if not self.WARNING == "":
-                    result += f"**⚠️ Peringatan :** {self.WARNING}\n"
+                    result += f"**⚠️ Peringatan:** {self.WARNING}\n"
                 result += f"**ℹ️ Info:** {self.INFO}\n\n"
 
         for command in self.COMMANDS:
