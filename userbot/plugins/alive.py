@@ -19,24 +19,23 @@ else:
 
 kraken = bot.uid
 
-PM_IMG = "https://telegra.ph/file/80e5200c615cf0cb57aa9.mp4"
-pm_caption = "__**🔥🔥ɦɛʟʟɮօt ɨs օռʟɨռɛ🔥🔥**__\n\n"
+PM_IMG = "https://telegra.ph/file/2d4bff46a2fcc62e67fda.jpg"
+pm_caption = "__**♛ Master Userbot ♛**__\n\n"
 
-pm_caption += (
-    f"               __↼🄼🄰🅂🅃🄴🅁⇀__\n**『 [{DEFAULTUSER}](tg://user?id={kraken}) 』**\n\n"
-)
 
-pm_caption += f"🛡️TELETHON🛡️ : `{version.__version__}` \n"
+pm_caption += f"**❃ Master**\n   ➥ [{DEFAULTUSER}](tg://user?id={kraken})\n"
 
-pm_caption += f"😈Hêllẞø†😈       : __**{hellversion}**__\n"
+pm_caption += f"**❃ Bot**\n   ➥ `Versi {hellversion}`\n"
 
-pm_caption += f"⚜️Sudo⚜️            : `{sudou}`\n"
+pm_caption += f"**❃ Telethon\n   ➥ `Versi {version.__version__}`\n"
 
-pm_caption += "⚠️CHANNEL⚠️   : [ᴊᴏɪɴ](https://t.me/HellBot_Official)\n"
+pm_caption += f"**❃ Status Sudo**\n   ➥ `{sudou}`\n"
 
-pm_caption += "🔥CREATOR🔥    : [Nub Here](https://t.me/kraken_the_badass)\n\n"
+pm_caption += "**❃ Grup Userbot**\n   ➥ [Grup Userbot](https://t.me/LordUserbot_Group)\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/hellboy-op/hellbot) 🔹 [📜License📜](https://github.com/HellBoy-OP/HellBot/blob/master/LICENSE)"
+pm_caption += "**❃ Owner Repo**\n   ➥ [Alvin](https://t.me/liualvinas)\n\n"
+
+pm_caption += "**❃ Repo**\n   ➥ [Repo Master](https://github.com/hellboy-op/hellbot)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
@@ -52,7 +51,7 @@ async def amireallyalive(alive):
 
 
 CmdHelp("alive").add_command(
-  'alive', None, 'Check weather the bot is alive or not'
+  'alive', None, 'Untuk Check Bot Mu Hidup Atau Tidak'
 ).add_command(
-  'hell', None, 'Check weather the bot is alive or not. In your custom Alive Pic and Alive Msg'
+  'master', None, 'Untuk Check Bot Mu Hidup Atau Tidak. Menggunakan Kustom Gambar Alive Dan Pesan Alive'
 ).add()
