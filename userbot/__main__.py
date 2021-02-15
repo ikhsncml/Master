@@ -49,11 +49,7 @@ for name in files:
 
 import userbot._core
 
-print(f"""HELLBOT IS ON!!! HELLBOT VERSION :- {hellversion}
-JOIN OFFICIAL CHAT GROUP AND UPDATES CHANNEL
-OFFICIAL GROUP :- @HELLBOT_OFFICIAL_CHAT
-OFFICIAL CHANNEL :- @HELLBOT_OFFICIAL
-IF YOU FACE ANY ISSUE THEN ASK AT CHAT GROUP.""")
+print(f"""✼ Master Userbot Versi {hellversion} Telah Aktif""")
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
