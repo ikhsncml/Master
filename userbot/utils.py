@@ -44,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("Successfully imported " + shortname)
+        LOGS.info("Berhasil Mengimpor " + shortname)
     else:
         import userbot.utils
 
@@ -72,7 +72,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
-        LOGS.info("Successfully imported " + shortname)
+        LOGS.info("Berhasil Mengimpor " + shortname)
 
 
 def remove_plugin(shortname):
@@ -256,13 +256,13 @@ async def edit_or_reply(
                 .get("result")
                 .get("key")
             )
-            text = linktext + f" [here](https://nekobin.com/{key})"
+            text = linktext + f" [Disini](https://nekobin.com/{key})"
         except:
             text = re.sub(r"•", ">>", text)
             kresult = requests.post(
                 "https://del.dog/documents", data=text.encode("UTF-8")
             ).json()
-            text = linktext + f" [here](https://del.dog/{kresult['key']})"
+            text = linktext + f" [Disini](https://del.dog/{kresult['key']})"
         if event.sender_id in Config.SUDO_USERS:
             if reply_to:
                 return await reply_to.reply(text, link_preview=link_preview)
@@ -326,7 +326,7 @@ def errors_handler(func):
             await func(errors)
         except BaseException:
 
-            date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            date = strftime("%y-%m-%d %H:%M:%S", gmtime())
             new = {
                 'error': str(sys.exc_info()[1]),
                 'date': datetime.datetime.now()
@@ -334,7 +334,7 @@ def errors_handler(func):
 
             text = "**USERBOT CRASH REPORT**\n\n"
 
-            link = "[here](https://t.me/sn12384)"
+            link = "[Here](https://t.me/lorduserbot_Group)"
             text += "If you wanna you can report it"
             text += f"- just forward this message {link}.\n"
             text += "Nothing is logged except the fact of error and date\n"
