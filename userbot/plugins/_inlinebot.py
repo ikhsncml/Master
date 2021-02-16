@@ -94,7 +94,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             )
         else:
             result = builder.article(
-                "@HellBot_Official",
+                "@Lorduserbot_Group",
                 text="""**Hallo Kamu! Ini Adalah Repo [Master Userbot](https://t.me/Lorduserbot_Group)\nRepo Yang Dibuat Oleh [Alvin](https://t.me/LiuAlvinas) Dari Beberapa Repo Userbot Github, Untuk Informasi Repo Bisa Tekan Tombol Dibawah.**""",
                 buttons=[
                     [
