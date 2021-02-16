@@ -1,5 +1,5 @@
 # by uniborg...Thanks @spechide
-# Now will be used in HellBot too....
+# Now will be used in Master Userbot too....
 import asyncio
 import datetime
 from datetime import datetime
@@ -40,23 +40,23 @@ async def set_not_afk(event):
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
         hellbot = await borg.send_message(
             event.chat_id,
-            "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+            "**❉ Master Telah Kembali\n**⏰ Master Telah AFK Selama:**"
             + total_afk_time
             + "`", file=hellpic
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                "#AFKFALSE \nSet AFK mode to False\n"
-                + "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+                "#AFKFALSE \nSetel Mode AFK Ke False\n"
+                + "**❉ Master Telah Kembali**\n**⏰ Master Telah AFK Selama:**"
                 + total_afk_time
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             await borg.send_message(  # pylint:disable=E0602
                 event.chat_id,
-                "Please set `PRIVATE_GROUP_BOT_API_ID` "
-                + "for the proper functioning of afk functionality "
-                + "Ask in @HellBot_Official_Chat to get help setting this value\n\n `{}`".format(str(e)),
+                "Mohon Setel `PRIVATE_GROUP_BOT_API_ID` "
+                + "Untuk Berfungsinya Perintah AFK "
+                + "Atau Bisa Pergi Ke @Lorduserbot_Group Untuk Mendapatkan Bantuan Cara Melakukannya\n\n `{}`".format(str(e)),
                 reply_to=event.message.id,
                 silent=True,
             )
@@ -92,10 +92,10 @@ async def on_afk(event):
         msg = None
         
         message_to_reply = (
-            f"Hey!! My master is currently offline... Since when?\n**For** `{total_afk_time}`\n"
-            + f"\n\n👇__The Reason Is__👇 :-\n`{reason}`"
+            f"**❃ Master Sedang AFK Dari** `{total_afk_time}` **Yang Lalu**\n"
+            + f" **➥ Alasan:** `{reason}`"
   if reason
-            else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
+            else f"**❃ Master Sedang AFK Dari `{total_afk_time}` Yang Lalu\n Tunggulah Sampa Dia Online"
         )
         msg = await event.reply(message_to_reply, file=hellpic)
         await asyncio.sleep(2)
